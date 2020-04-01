@@ -14,7 +14,7 @@ public class MainController {
     @RequestMapping(value="/addadmin", method=RequestMethod.POST)
     public boolean addAdmin(@RequestBody User user)
 	    {
-	        user.type = "admin";
+       user.type = "admin";
         if(userRepository.save(user) != null)
             return true;
         return false;
