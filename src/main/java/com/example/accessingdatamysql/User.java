@@ -8,14 +8,13 @@ import javax.persistence.Id;
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private String username;
 
     private String password;
 
     private String email;
 
-    public String getusername() {
+    public String getUsername() {
         return username;
     }
 
