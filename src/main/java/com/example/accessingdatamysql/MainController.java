@@ -20,7 +20,7 @@ public class MainController {
     @PostMapping(path="/add") // Map ONLY POST Requests
     public boolean add(@RequestBody User user)
 	    {
-        if(userRepository.save(n) != null)
+        if(userRepository.save(user) != null)
             return true;
         return false;
       }
