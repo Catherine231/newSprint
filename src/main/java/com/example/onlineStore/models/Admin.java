@@ -1,4 +1,4 @@
-package com.example.accessingdatamysql.models;
+package com.example.onlineStore.models;
 
 public class Admin extends User
 {

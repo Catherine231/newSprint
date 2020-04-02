@@ -1,4 +1,4 @@
-package com.example.accessingdatamysql.models;
+package com.example.onlineStore.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

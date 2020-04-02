@@ -1,8 +1,8 @@
-package com.example.accessingdatamysql.controller;
+package com.example.onlineStore.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.accessingdatamysql.models.User;
-import com.example.accessingdatamysql.Repositories.UserRepository;
+import com.example.onlineStore.models.User;
+import com.example.onlineStore.Repositories.UserRepository;
 import java.util.List;
 import java.util.ArrayList;
 

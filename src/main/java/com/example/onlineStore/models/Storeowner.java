@@ -1,13 +1,13 @@
-package com.example.accessingdatamysql.models;
+package com.example.onlineStore.models;
 
-public class Storeowner extends User 
+public class Storeowner extends User
 {
 	void R_addstore(){
-		
+
 	}
 	void suggest_brand(){
-		
+
 	}
 	void addproduct(){}
-	
+
 }

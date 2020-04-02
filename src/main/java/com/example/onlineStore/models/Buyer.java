@@ -1,4 +1,4 @@
-package com.example.accessingdatamysql.models;
+package com.example.onlineStore.models;
 
 public class Buyer extends User
 {
@@ -8,7 +8,7 @@ public class Buyer extends User
     }
     public search()
     {
-	
+
     }
 
 }
