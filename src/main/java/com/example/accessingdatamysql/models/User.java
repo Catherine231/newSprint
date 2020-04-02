@@ -1,4 +1,4 @@
-package com.example.accessingdatamysql;
+package com.example.accessingdatamysql.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +12,7 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private String type;
 
     public User(String username, String password, String email) {
     	super();
@@ -45,5 +46,12 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
