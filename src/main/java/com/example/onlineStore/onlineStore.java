@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class onlineStore{
 
 	public static void main(String[] args) {
-		SpringApplication.run(AccessingDataMysqlApplication.class, args);
+		SpringApplication.run(onlineStore.class, args);
 	}
 
 }
