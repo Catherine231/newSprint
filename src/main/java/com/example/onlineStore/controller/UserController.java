@@ -3,9 +3,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.onlineStore.models.User;
 import com.example.onlineStore.services.IUserServices;
-
 import java.util.List;
-
 
 @RestController // This means that this class is a Controller
 public class UserController {
