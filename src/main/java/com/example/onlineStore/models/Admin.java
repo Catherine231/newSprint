@@ -13,6 +13,5 @@ public class Admin extends User
 	}
 	void provide_voucher() {
 		
-	}
-	void  
+	}  
 }
