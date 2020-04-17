@@ -15,8 +15,7 @@ import java.util.ArrayList;
 
 @Service
 public class UserServices implements IUserServices{
-
-	@PersistenceContext private EntityManager em;
+	
 	@Autowired private UserRepository userRepository;
 	
 	@Override
@@ -39,12 +38,12 @@ public class UserServices implements IUserServices{
 	@Override
 	public boolean verifyLogin(String username, String pass) {
 		
-		TypedQuery query = em.createQuery("select a from User u where u.username=?1 And u.passsword=?2", User.class);
-		query.setParameter(1, username);
-		query.setParameter(2, pass);
-		
-		if(!query.equals(null))
-			return true;
+		Iterable<User> usersIter= userRepository.findAll();
+		for(User user: usersIter) 
+		{
+			if(user.getUsername().equals(username) && user.getPassword().equals(pass))
+				return true;		
+		}
 		 
 		return false;
 	}
