@@ -29,6 +29,13 @@ public class UserController {
         user.setType("store_owner");
         return srv.addUser(user);
     }
+    
+    @RequestMapping(value="/login", method=RequestMethod.POST)
+    public boolean login(@RequestParam String username, @RequestParam String pass)
+    {
+		return srv.verifyLogin(username,pass);
+    }
+    
     @RequestMapping(value="/allUsers", method=RequestMethod.GET)
      public List<User> getAllUsers() 
     {
