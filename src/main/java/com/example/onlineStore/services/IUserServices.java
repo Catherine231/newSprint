@@ -7,5 +7,6 @@ public interface IUserServices {
 	public boolean addUser(User user);
 	public boolean verifyLogin(String username, String pass);
 	public List<User> getAll();
+	public User findByUsername(String name) ;
 
 }

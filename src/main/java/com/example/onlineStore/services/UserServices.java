@@ -36,17 +36,28 @@ public class UserServices implements IUserServices{
 	}
 
 	@Override
-	public boolean verifyLogin(String username, String pass) {
+	public boolean verifyLogin(String username, String pass) 
+	{
 		
+		User user= findByUsername(username);
+		if(user!= null && user.getPassword().equals(pass))
+				return true;		
+		
+		return false;
+	}
+
+	@Override
+	public User findByUsername(String name) 
+	{
 		Iterable<User> usersIter= userRepository.findAll();
 		for(User user: usersIter) 
 		{
-			if(user.getUsername().equals(username) && user.getPassword().equals(pass))
-				return true;		
+			if(user.getUsername().equals(name))
+				return user;		
 		}
-		 
-		return false;
+		return null;
 	}
+
 
 	
 
