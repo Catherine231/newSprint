@@ -41,4 +41,10 @@ public class UserController {
     {
     	return srv.getAll();
     }
+
+    @RequestMapping(value="/logout", method=RequestMethod.GET)
+    public void logout()
+    {
+        srv.logout();
+    }
 }

@@ -8,5 +8,5 @@ public interface IUserServices {
 	public boolean verifyLogin(String username, String pass);
 	public List<User> getAll();
 	public User findByUsername(String name) ;
-
+	public void logout();
 }

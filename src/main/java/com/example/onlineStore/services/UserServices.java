@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import com.example.onlineStore.Repositories.UserRepository;
 import com.example.onlineStore.models.User;
 
+import com.example.onlineStore.MyUserDetails;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -27,12 +29,16 @@ public class UserServices implements IUserServices{
 
 	@Override
 	public List<User> getAll() {
-		Iterable<User> usersIter= userRepository.findAll();
-		List<User> all= new ArrayList<User>();
-		for(User user: usersIter)
-			all.add(user);
+		if(MyUserDetails.getType().equals("admin")){
+			Iterable<User> usersIter = userRepository.findAll();
+			List<User> all = new ArrayList<User>();
+			for (User user : usersIter)
+				all.add(user);
 
-		return all;
+			return all;
+		}else{
+			return null;
+		}
 	}
 
 	@Override
@@ -40,10 +46,17 @@ public class UserServices implements IUserServices{
 	{
 		
 		User user= findByUsername(username);
-		if(user!= null && user.getPassword().equals(pass))
-				return true;		
+		if(user!= null && user.getPassword().equals(pass)) {
+			MyUserDetails.login(username, user.getType());
+			return true;
+		}
 		
 		return false;
+	}
+
+	@Override
+	public void logout(){
+		MyUserDetails.logout();
 	}
 
 	@Override
